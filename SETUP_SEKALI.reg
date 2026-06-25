@@ -1,0 +1,39 @@
+Windows Registry Editor Version 5.00
+
+; ── Nonaktifkan dialog keamanan URL Office ──
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Security]
+"DisableHyperlinkWarning"=dword:00000001
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\15.0\Common\Security]
+"DisableHyperlinkWarning"=dword:00000001
+
+; ── Tambah file:// sebagai protokol terpercaya ──
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Security\Trusted Protocols\All Applications\file:]
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\15.0\Common\Security\Trusted Protocols\All Applications\file:]
+
+; ── Trusted Location folder D:\lauching ──
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\PowerPoint\Security\Trusted Locations\Location99]
+"Path"="D:\\lauching\\"
+"AllowSubFolders"=dword:00000001
+"Description"="Launching MAN 1 Bangka"
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\15.0\PowerPoint\Security\Trusted Locations\Location99]
+"Path"="D:\\lauching\\"
+"AllowSubFolders"=dword:00000001
+"Description"="Launching MAN 1 Bangka"
+
+; ── Custom protocol launchppt:// → buka PPT slideshow ──
+[HKEY_CURRENT_USER\SOFTWARE\Classes\launchppt]
+@="Launch PowerPoint Slideshow"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\launchppt\DefaultIcon]
+@="\"C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE\",0"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\launchppt\shell]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\launchppt\shell\open]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\launchppt\shell\open\command]
+@="\"C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE\" /S \"D:\\lauching\\SinergiMan1Bangka.pptx\""
